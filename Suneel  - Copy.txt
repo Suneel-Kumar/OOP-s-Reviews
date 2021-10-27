@@ -1,0 +1,202 @@
+
+int row, col;
+	cin>>row>>col;
+	
+	for(int i=1; i<=row; i++){
+	for(int j=1; j<=col; j++){
+		if(i==1 || i==row || j==1 || j==col){
+			cout<<"*";
+		}
+		else{
+			cout<<" ";
+		}		
+	}
+	cout<<endl;
+}
+
+
+// Inverted half Pyramid
+	int n;
+	cin>>n;
+	for(int i=0; i<n; i++){
+		for(int j=1; j<=n-i; j++){
+			cout<<"* ";
+		}
+		cout<<endl;
+	}
+
+
+// half Pyramid using 180 rotation;
+	int n;
+	cin>>n;
+	for(int i=1; i<=n; i++){
+		for(int j=0; j<n-i; j++){
+			cout<<" ";
+		}
+		for(int j=1; j<=i; j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+
+
+// half Pyramid using 180 rotation;
+	int n;
+	cin>>n;
+	for(int i=1; i<=n; i++){
+		for(int j=1; j<=n; j++){
+			if(j<=n-i){
+				cout<<" ";
+			}
+			else{
+				cout<<"*";
+			}
+		}
+		cout<<endl;
+	}
+
+
+// Print butterfly
+for(int i=1; i<=n; i++){
+		for(int j=1; j<=i; j++){
+			cout<<"* ";
+		}
+		int space = 2*n-2*i;
+		for(int j=1; j<=space; j++){
+			cout<<"  ";
+		}
+		for(int j=1; j<=i; j++){
+			cout<<"* ";
+		}
+		
+		cout<<endl;
+	}
+	for(int i=n; i>=1; i--){
+		for(int j=1; j<=i; j++){
+			cout<<"* ";
+		}
+		int space = 2*n-2*i;
+		for(int j=1; j<=space; j++){
+			cout<<"  ";
+		}
+		for(int j=1; j<=i; j++){
+			cout<<"* ";
+		}
+		
+		cout<<endl;
+	}
+
+
+// printing pyramid pattern
+	int n;
+	cin>>n;
+	for(int i=1; i<=n; i++){
+		for(int j=1; j<=n-i; j++){
+			cout<<" ";
+		}
+		for(int j=1; j<=i; j++){
+			cout<<"* ";
+		}
+		cout<<endl;
+	}
+
+
+// check number is prime or not
+	int n;
+	cin>>n;
+	bool flag = true;
+	for(int i=2; i<n; i++){
+		if(n%i==0){
+			flag = false;
+			break;
+		}
+	}
+	
+	if(flag){
+		cout<<n<<" is a Prime";
+	}
+	else{
+		cout<<"Non Prime ";
+	}
+
+// reverse a given number
+	int n;
+	cin>>n;
+	int reverse = 0;
+	
+	while(n>0){
+		int lastDigit = n%10;
+		reverse = reverse *10 + lastDigit;
+		n = n/10;
+	}
+	cout<<reverse<<endl;
+
+
+// factorial
+int fact(int n){
+	int factorial = 1;
+	for(int i=2; i<=n; i++){
+		factorial *= i;
+	}
+	return factorial;
+}
+
+// fibonacci
+void fib(int n){
+	int t1 = 0;
+	int t2 = 1;
+	int nextTerm;
+	for(int i=1; i<=n; i++){
+		cout<<t1<<endl;
+		nextTerm = t1+t2;
+		t1 = t2;
+		t2 = nextTerm;
+	}
+}
+
+
+// find min & max in arr
+	int minNo = INT_MAX, maxNo = INT_MIN;
+	
+	for(int i=0; i<n; i++){
+		maxNo = max(maxNo, arr[i]);
+		minNo = min(minNo, arr[i]);
+}
+
+
+int binarySearch(int arr[], int n, int key){
+	int s = 0;
+	int e = n;
+	
+	while(s<=e){
+		int mid = (s+e)/2;
+		if(arr[mid] == key){
+			return mid;
+		}
+		else if(arr[mid] > key){
+			e = mid-1;
+		}else{
+			s = mid+1;
+		}
+	}	
+	return -1;
+}
+
+function currencyCal(n){
+        let thousand = Math.floor(n/1000);
+        n = n%1000;
+        let fiveHundred = Math.floor(n/500);
+        n = n%500;
+        let hundred = Math.floor(n/100);
+        n = n%100;
+        let fifty = Math.floor(n/50);
+        n = n%50;
+        let ten = Math.floor(n/10);
+        n = n%10;
+        let five = Math.floor(n/5);
+        n = n%5;
+        let two = Math.floor(n/2);
+        n = n%2;
+       console.log(`1000-${thousand}, 500-${fiveHundred}, 100-${hundred}, 50-${fifty}, 10-${ten}, 5-${five} 2-${two}, one-${n}`);
+}
+
